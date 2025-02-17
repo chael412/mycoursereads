@@ -1,3 +1,40 @@
+<?php
+session_start();
+include("config/db_localhost.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_id = $_POST['user_id'];
+    $password = $_POST['password'];
+    $user_type = $_POST['user_type'];
+
+    if ($user_type == 'librarian') {
+        $query = "SELECT * FROM librarianuser WHERE user_id='$user_id'";
+    } else {
+        $query = "SELECT * FROM staffuser WHERE user_id='$user_id'";
+    }
+
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row['password'])) {
+            // Store user information in session
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_type'] = $user_type;
+            $_SESSION['first_name'] = $row['first_name']; // Assuming there's a 'first_name' column in your table
+
+            header("location: dashboardpage/dashboards.php"); // Redirect to the dashboard after successful login
+            exit();
+        } else {
+            $error = "Invalid password.";
+        }
+    } else {
+        $error = "Invalid user ID.";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +84,7 @@
                         <div class="col text-center">
                             <i class="bi-10x bi-person-circle" style="font-size: 50px;"></i>
                         </div>
-                        <h4 class="card-title text-center">LOGINSSSS</h4>
+                        <h4 class="card-title text-center">LOGIN</h4>
                         <p class="text-center fs-7">MyCourseReads</p>
                         <form method="post" action="">
                             <!-- User Type Buttons -->
