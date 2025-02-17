@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'funky';
+    src: url(../fonts/MontserratMedium-nRxlJ.ttf);
+}
+
+@font-face {
+    font-family: 'pixel';
+    src: url(../fonts/MontserratMedium-nRxlJ.ttf);
+}
+
+
+.btn.floatingBTN {
+    background-color: #e29d36;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #FFF;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 2px 2px rgba(52, 52, 52, 0.16), 0 2px 2px rgba(68, 68, 68, 0.23);
+    margin-bottom: 60px;
+    font-size: 1.3rem;
+    font-family: 'pixel';
+    z-index: 100;
+    padding: 10px;
+}
+
+.btn.floatingBTN:hover {
+    background-color: #0A6847;
+}
+
+.modal-dialog.modalnotes {
+    position: fixed;
+    margin: auto;
+    width: 320px;
+    height: 100%;
+    right: 0px;
+}
+
+.modal-content.modalnotes {
+    height: 100%;
+}
+
+
+body {
+    background-color: #fafbfe;
+    /* background-image: linear-gradient(#dce8d4 1px, transparent 1px), linear-gradient(to right, #dce8d4 1px, #cad2c5 1px);
+    background-size: 20px 20px;  */
+}
+
+section {
+    padding: 80px 0;
+}
+
+.logo1 {
+    font-family: "funky", sans-serif;
+}
+
+.title {
+    font-family: "funky", sans-serif;
+    color: #ffffff;
+}
+
+.title h2 {
+    background-color: #0A6847;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px rgba(52, 52, 52, 0.16), 0 2px 2px rgba(68, 68, 68, 0.23);
+}
+
+h2 {
+    font-family: "pixel", sans-serif;
+}
+
+.img1 {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.img2 {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.color-text {
+    color: #ffffff;
+
+}
+
+.color-text:hover {
+    color: #cad2c5;
+
+}
+
+.btn {
+    background-color: #5a8a5f;
+    color: #ffffff;
+    
+}
+
+.btn:hover {
+    background-color: #F3CA52;
+    color: #ffffff;
+}
+
+
+.card {
+    background-color: #0A6847;
+    box-shadow: 0 2px 2px rgba(52, 52, 52, 0.16), 0 2px 2px rgba(68, 68, 68, 0.23);
+}
+
+.card img {
+    width: 50%;
+}
+
+.card-body {
+    color: #ffffff;
+    font-family: "pixel", sans-serif;
+    font-size: smaller;
+}
+
+
+.footer {
+    /* background-color: #cad2c5;
+    border-top: 1px solid #dce8d4; */
+    background-color: #0A6847;
+    border-top: 1px solid #415d61;
+    color: #ffffff;
+    margin-top: 70px;
+    height: 70px;
+    clear: both;
+    padding-top: 20px;
+}
+
+.footer-text {
+    font-family: "funky", sans-serif;
+}

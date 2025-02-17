@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+#loadingSpinner .spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+
+
+.wrapper {
+    display: flex;
+    position: relative;
+    /* Ensures positioning relative to the wrapper */
+    min-height: 100vh;
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: width .25s ease-in-out;
+    /* Smooth transition for width change */
+    background-color: #0A6847;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    /* Fixed positioning */
+    top: 0;
+    bottom: 0;
+    /* Full height */
+}
+
+#sidebar.expand {
+    width: 230px;
+    min-width: 230px;
+}
+
+.main-content {
+    margin-left: 70px;
+    /* Default margin for collapsed sidebar */
+    background-color: #fcfcfc;
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Allow vertical scrolling */
+    transition: margin-left .25s ease-in-out;
+    /* Smooth transition for margin change */
+    padding: 20px;
+}
+
+/* section{
+    padding-left: 20px;
+    padding-right: 20px;
+} */
+
+#sidebar.expand~.main-content {
+    margin-left: 230px;
+    /* Margin for expanded sidebar */
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    padding: .625rem 1.625rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link i {
+    font-size: 1.1rem;
+    margin-right: .75rem;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #F3CA52;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0A6847;
+    padding: 0;
+    min-width: 12rem;
+    display: none;
+    /* border-radius: 10px; */
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown+.sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.sidebar-footer {
+
+    background-color: #0A6847;
+    color: #FFF;
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 0 3px 0 rgba(33, 37, 41, .1);
+}
+
+.navbar-expand .navbar-collapse {
+    min-width: 200px;
+}
+
+.dropdown-menu .dropdown-item {
+    font-size: 0.8rem;
+    /* Adjust font size */
+}
+
+.notification-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    /* Adjust width and height to make it circular */
+    height: 40px;
+    border-radius: 50%;
+    /* Make it circular */
+    background-color: #F3CA52;
+    /* Notification icon background color */
+}
+
+
+.notificon {
+    color: #FFF;
+    font-size: 1rem;
+}
+
+.badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+
+}
+
+.badge.bg-danger {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+    color: black;
+}
+
+.btn {
+    background-color: #0A6847;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #648e7f;
+    color: #ffffff;
+}
+
+.card-footer {
+    background-color: #fff;
+}
+
+.table-select {
+    height: 30px;
+    font-size: 14px;
+    padding: 5px;
+}
+
+thead th {
+    font-size: 12px;
+}
+
+tbody td {
+    font-size: 12px;
+}
+
+.table-container {
+    overflow-y: auto;
+}
+
+/* NOT WORKING :( */
+.custom-selectpicker {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #495057;
+}
+
+
+.breadcrumb a {
+    color: inherit;
+    /* Inherit color from the parent, making it the same as the text color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.breadcrumb a:hover {
+    color: #F3CA52;
+    /* Change this to your preferred color when hovering over the link */
+}
+
+/* Ensure the pagination container uses flexbox for centering */
+.dataTables_wrapper .dataTables_paginate {
+    display: flex;
+    /* Use flexbox */
+    justify-content: center;
+    /* Center pagination buttons horizontally */
+    align-items: center;
+    /* Align items vertically */
+}
+
+/* Style the pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    padding: 0.5em 1em;
+    margin: 0.2em;
+    border-radius: 3px;
+    /* Smaller border-radius for smaller buttons */
+    background-color: #ffffff;
+    color: #090909;
+    font-size: 0.8em;
+    /* Smaller font size */
+    display: inline-flex;
+    /* Inline-flex for better vertical alignment */
+    align-items: center;
+    /* Center content vertically */
+}
+
+/* Hover state for pagination buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #0A6847;
+    color: white;
+}
+
+/* Current page button style */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #0A6847;
+    color: white;
+    border: 1px solid #0A6847;
+}
+
+/* Align Previous and Next buttons */
+.dataTables_wrapper .dataTables_paginate .paginate_button.previous,
+.dataTables_wrapper .dataTables_paginate .paginate_button.next {
+    margin: 0.1em;
+    /* Adjust margin to match the page numbers */
+}
+
+/* Ensure the filter container is positioned at the top left */
+.dataTables_wrapper .dataTables_filter {
+    text-align: left;
+    /* Align the search bar to the left */
+    margin-bottom: 1em;
+    /* Space below the search bar */
+    margin-top: 1em;
+    /* Space above the search bar, if needed */
+}
+
+/* Style the search input field */
+.dataTables_wrapper .dataTables_filter input {
+    border-radius: 3px;
+    padding: 0.3em;
+    border: 1px solid #ddd;
+}
+
+/* Ensure the search bar is responsive */
+.dataTables_wrapper .dataTables_filter {
+    display: flex;
+    justify-content: flex-start;
+    /* Align to the start (left) */
+}
+
+.footer {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    margin-top: 70px;
+    height: 70px;
+    clear: both;
+    padding-top: 20px;
+}
+
+.footer-text {
+    font-family: "funky", sans-serif;
+}
+
+.navbar-title {
+    margin: auto 0;
+    padding-left: 10px;
+}
+
+.navbar-title a {
+    color: #0A6847;
+    font-size: 1.15rem;
+    font-weight: 600;
+}

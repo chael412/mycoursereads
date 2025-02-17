@@ -1,0 +1,298 @@
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(53, 79, 82)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+body {
+    background-color: #fafbfe;
+}
+
+
+.logo1 {
+    color: #0A6847;
+}
+
+.navbar {
+    background-color: #ffffff;
+   
+
+}
+
+.navbar-brand:hover {
+    color: #F3CA52;
+}
+
+.color-text:hover {
+    color: #F3CA52;
+
+}
+
+.btn.cancelbtn {
+    background-color: #65898d;
+    color: #ffffff;
+}
+
+.btn.cancelbtn:hover {
+    background-color: #F3CA52;
+    color: #ffffff;
+}
+
+.btn {
+    background-color: #0A6847;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #F3CA52;
+    color: #ffffff;
+}
+
+.btn.btnlogin {
+    background-color: #0A6847   ;
+    color: #ffffff;
+}
+
+
+
+.btn.btnlogin:hover {
+    background-color: #F3CA52;
+    color: #ffffff;
+}
+
+.btn.btnintro {
+    background-color: #0A6847;
+    color: #ffffff;
+    font-family: "pixel", sans-serif;
+}
+
+.btn.btnintro:hover {
+    background-color: #e29d36;
+    color: #ffffff;
+}
+
+.overlay {
+    color: #fff;
+    position: absolute;
+    z-index: 12;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+.introtext {
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.introtext2 {
+    color: #ffffff;
+    padding: 10px;
+    display: inline-block;
+    font-size: medium;
+}
+
+.title {
+    font-family: "funky", sans-serif;
+    color: #ffffff;
+
+}
+
+.title h2 {
+    background-color: #0A6847;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 2px 2px rgba(52, 52, 52, 0.16), 0 2px 2px rgba(68, 68, 68, 0.23);
+}
+
+
+.carousel-inner {
+    min-height: 90vh;
+}
+
+.bg-img-1 {
+    background-image: url("img/slide21.jpg");
+}
+
+.carousel-image {
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.card-about {
+    background-color: #0A6847;
+    box-shadow: 0 2px 2px rgba(52, 52, 52, 0.16), 0 2px 2px rgba(68, 68, 68, 0.23);
+    background-image: url("../img/cloverfield.jpg");
+    background-size: cover;
+}
+
+.card-text {
+    font-size: 25px;
+    text-align: justify;
+
+}
+
+.card-about .card-body {
+    color: #ffffff;
+    font-family: "pixel", sans-serif;
+    font-size: larger;
+    padding: 30px;
+}
+
+
+.card-book {
+    background-color: #ffffff;
+    
+}
+
+.card-book .card-text {
+    font-size: small;
+    text-align: justify;
+}
+
+.card-book .card-body {
+    font-family: "pixel", sans-serif;
+    font-size: large;
+    padding: 30px;
+}
+
+.heading1 {
+    font-family: 'pixel';
+    color: #0A6847;
+    background-color: #ffffff;
+    display: inline-block;
+    border: #0A6847 2px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px rgba(52, 52, 52, 0.16), 0 2px 2px rgba(68, 68, 68, 0.23);
+
+}
+
+.heading2 {
+    font-family: 'pixel';
+    color: #0A6847;
+    background-color: #ffffff;
+    display: inline-block;
+
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 2px rgba(52, 52, 52, 0.16), 0 2px 2px rgba(68, 68, 68, 0.23);
+
+}
+
+.lead {
+    font-family: 'pixel';
+    font-size: medium;
+    text-align: justify;
+}
+
+.about-image img {
+    border-radius: 50%;
+}
+
+
+th {
+    font-weight: normal;
+    color: #2f3e46;
+}
+
+.contact-h{
+    font-family: 'pixel';
+    color: #ffffff;
+    font-size: large;
+}
+
+
+.footer {
+    background-color: #0A6847;
+    color: #ffffff;
+    margin-top: 70px;
+    height: 70px;
+    clear: both;
+    padding-top: 20px;
+}
+
+.footer-text {
+    font-family: "funky", sans-serif;
+}
+
+.confirmation-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.carousel-item {
+    background-size: cover;
+    background-position: center;
+}
+
+.form-select {
+    font-size: 0.8rem; /* Adjust this value to your preferred font size */
+}
+
+.form-control {
+    font-size: 0.8rem; /* Adjust this value to your preferred font size */
+}
+
+/* Ensure pagination does not overflow */
+.pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pagination .page-link {
+    margin: 0 2px;
+}
+
+/* Center the pagination */
+.text-center {
+    text-align: center;
+}
+
+/* Custom colors for pagination */
+.pagination .page-link {
+    background-color: #ffffff; /* Custom background color */
+    color: #242424; /* Custom text color */
+    
+}
+
+.pagination .page-link:hover {
+    background-color: #F3CA52; /* Darker background color on hover */
+    color: #ffffff; /* Ensure text color remains white on hover */
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #0A6847; /* Custom background color for active page */
+    color: #ffffff;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #e9ecef; /* Color for disabled state */
+    color: #6c757d; /* Text color for disabled state */
+    
+}
+
+.breadcrumb a {
+    color: inherit;
+    /* Inherit color from the parent, making it the same as the text color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.breadcrumb a:hover {
+    color: #F3CA52;
+    /* Change this to your preferred color when hovering over the link */
+}
+
