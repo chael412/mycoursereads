@@ -47,7 +47,7 @@
                         <div class="col text-center">
                             <i class="bi-10x bi-person-circle" style="font-size: 50px;"></i>
                         </div>
-                        <h4 class="card-title text-center">LOGIN</h4>
+                        <h4 class="card-title text-center">LOGINSSSS</h4>
                         <p class="text-center fs-7">MyCourseReads</p>
                         <form method="post" action="">
                             <!-- User Type Buttons -->
