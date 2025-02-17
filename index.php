@@ -1,4 +1,26 @@
-<div class="html"></div>
+<?php
+session_start();
+include('header.php');
+?>
+
+<head>
+    <script>
+        function checkLoginStatus(event) {
+            // Check if user is logged in
+            const userLoggedIn = <?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>;
+
+            if (!userLoggedIn) {
+                // Prevent the form submission
+                event.preventDefault();
+
+                // Show the login prompt modal
+                const loginPromptModal = new bootstrap.Modal(document.getElementById('loginPromptModal'));
+                loginPromptModal.show();
+            }
+        }
+    </script>
+</head>
+
 <body class="d-flex flex-column min-vh-100">
     <!-- HOME  -->
     <section>
@@ -54,7 +76,9 @@
     </section>
 
     <!-- FOOTER -->
-   
+    <?php
+    include('footer.php');
+    ?>
 
     <!-- Login Prompt Modal -->
     <div class="modal fade" id="loginPromptModal" tabindex="-1" aria-labelledby="loginPromptModalLabel" aria-hidden="true">
