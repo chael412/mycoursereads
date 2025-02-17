@@ -1,7 +1,7 @@
 <?php
 include("session_check.php"); // session check to protect pages
 ob_start();
-include("../config/db_vivliotek.php");
+include("../config/db_vivliotekonline.php");
 
 // Insert save book code here
 if (isset($_POST['save_books'])) {
