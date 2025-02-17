@@ -1,38 +1,38 @@
 <?php
 session_start();
-include("config/db_localhost.php");
+include("config/db_vivliotekonline.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $user_id = $_POST['user_id'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
-    $user_type = $_POST['user_type'];
 
-    if ($user_type == 'librarian') {
-        $query = "SELECT * FROM librarianuser WHERE user_id='$user_id'";
-    } else {
-        $query = "SELECT * FROM staffuser WHERE user_id='$user_id'";
-    }
-
-    $result = mysqli_query($conn, $query);
+    // Use prepared statements to prevent SQL injection
+    $query = "SELECT * FROM employees WHERE email = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
+        $id = $row['id']; // Fetch user ID
+
         if (password_verify($password, $row['password'])) {
             // Store user information in session
-            $_SESSION['user_id'] = $user_id;
-            $_SESSION['user_type'] = $user_type;
-            $_SESSION['first_name'] = $row['first_name']; // Assuming there's a 'first_name' column in your table
+            $_SESSION['user_id'] = $id; // Changed 'users' to 'user_id' for consistency
+            $_SESSION['email'] = $email;
+            $_SESSION['first_name'] = $row['first_name']; // Ensure 'first_name' exists in the table
 
-            header("location: dashboardpage/dashboards.php"); // Redirect to the dashboard after successful login
+            // Redirect to the dashboard after successful login
+            header("Location: dashboardpage/dashboards.php");
             exit();
         } else {
-            $error = "Invalid password.";
+            $error = "Invalid email or password.";
         }
     } else {
-        $error = "Invalid user ID.";
+        $error = "Invalid email or password.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -87,15 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <h4 class="card-title text-center">LOGIN</h4>
                         <p class="text-center fs-7">MyCourseReads</p>
                         <form method="post" action="">
-                            <!-- User Type Buttons -->
-                            <div class="mb-3 text-center">
-                                <button type="button" id="librarian-btn" class="btn user-type-btn" onclick="setUserType('librarian')">Librarian</button>
-                                <button type="button" id="staff-btn" class="btn user-type-btn" onclick="setUserType('staff')">Library Staff</button>
-                            </div>
-                            <input type="hidden" name="user_type" id="user_type" required="required">
                             <div class="mb-3">
-                                <label class="form-label">User ID</label>
-                                <input class="form-control form-control-sm" id="user_id" name="user_id" required="required">
+                                <label class="form-label">Email</label>
+                                <input class="form-control form-control-sm" id="email" name="email" required="required">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Password</label>
